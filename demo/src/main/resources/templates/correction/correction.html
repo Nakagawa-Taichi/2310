@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>勤怠修正</title>
+	<link rel="stylesheet" href="correction.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1>勤怠修正</h1>
+
+		<div class="form-group">
+			<label for="user_id">ユーザーID:</label>
+			<input type="text" id="user_id" name="user_id">
+		</div>
+
+		<div class="form-group">
+			<label for="attend">出勤日</label>
+			<input type="date" name="attend" id="attend">
+		</div>
+
+		<div class="form-group">
+			<label for="leaving">退勤日</label>
+			<input type="date" name="leaving" id="leaving">
+		</div>
+
+		<div class="form-group">
+			<label for="status">ステータス</label>
+			<select id="status" name="status">
+				<option value="work">出勤</option>
+				<option value="absent">欠勤</option>
+				<option value="delay">遅刻</option>
+				<option value="early">早退</option>
+				<option value="others">その他</option>
+			</select>
+		</div>
+
+		<div class="attend-time">
+			<label for="attendtime">出勤時間</label>
+			<input type="time" name="attendtime" id="attendtime">
+		</div>
+
+		<div class="leaving-time">
+			<label for="leavingtime">退勤時間</label>
+			<input type="time" name="leavingtime" id="leavingtime">
+		</div>
+
+		<div class="operartion-time">
+			<label for="operartiontime">稼働時間</label>
+			<input type="time" name="operartiontime" id="operartiontime">
+		</div>
+
+		<div class="form-group">
+			<label for="breaktime">休憩時間</label>
+			<input type="time" name="breaktime" id="breaktime">
+		</div>
+
+		<div class="form-group">
+			<label for="correction">修正理由</label>
+			<textarea id="correction" name="correction" rows="1" cols="30" required></textarea>
+		</div>
+
+		<div class="form-group">
+			<label for="remarks">備考</label>
+			<textarea id="remarks" name="remarks" rows="1" cols="30"></textarea>
+		</div>
+
+		<div class="form-group">
+			<button class="submit-button" type="submit">申請</button>
+			<!-- フォーム送信後、勤怠一覧に戻りたい -->
+			<!-- <a href="Attendance.html"></a> -->
+		</div>
+
+	</div>
+</body>
+
+</html>
