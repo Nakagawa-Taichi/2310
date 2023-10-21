@@ -1,147 +1,98 @@
-html, body {
+body {
     margin: 0;
     padding: 0;
+    width: 100%;
+    background-color: #f6f6f6;
+    text-align: center;
+    font-family: arial;
 }
 
 .container {
-    width: 100%;
-    max-width: 400px;
+    max-width: 100%;
     margin: 0 auto;
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h1 {
+    color: #ff7f50;
     font-size: 24px;
-    text-align: center;
-    color: #0077B6;
 }
 
 .form-group {
     margin-bottom: 20px;
-    text-align: center;
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
     font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+
 }
 
-input[type="text"], input[type="date"], select, textarea {
-    width: 100%;
+input[type="text"],
+input[type="date"],
+select,
+input[type="number"],
+textarea {
+    width: 80%;
     padding: 8px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #ccc;
     border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out;
     box-sizing: border-box;
 }
 
-input[type="submit"] {
-    width: auto;
-    background-color: #3399cc;
-    color: #ffffff;
-    padding: 10px 15px;
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus,
+input[type="number"]:focus,
+textarea:focus {
+    border-color:#ff7f50;
+}
+
+.submit-button {
+    background-color: #ff7f50;
+    color: #fff;
     border: none;
+    padding: 12px 20px;
+    font-size: 18px;
     border-radius: 4px;
-    font-size: 16px;
     cursor: pointer;
-    transition: background 0.3s;
-    margin-right: 0;
-    flex: 1;
+    transition: background-color 0.3s ease-in-out;
+    margin-right: 20px;
 }
 
-input[type="submit"]:hover {
-    background-color: #0077B6;
+.submit-button:hover {
+    background-color: #f57546;
 }
 
-input[type="submit"][value="キャンセル"] {
+.cancel-button {
     background-color: #c8c8c8;
-    margin-left: 10px;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
 }
 
-input[type="submit"][value="キャンセル"]:hover {
+.cancel-button:hover {
     background-color: #949494;
 }
 
-.text-center {
-    display: flex;
-    html, body {
-        margin: 0;
-        padding: 0;
-    }
-    
-    .container {
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        box-sizing: border-box;
-    }
-    
-    h1 {
-        font-size: 24px;
-        text-align: center;
-        color: #0077B6;
-    }
-    
-    .form-group {
-        margin-bottom: 20px;
-        text-align: center;
-    }
-    
-    label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-    }
-    
-    input[type="text"], input[type="date"], select, textarea {
-        width: 100%;
-        padding: 8px;
-        border: 1px solid #e0e0e0;
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
-    
-    input[type="submit"] {
-        width: auto;
-        background-color: #3399cc;
-        color: #ffffff;
-        padding: 10px 15px;
-        border: none;
-        border-radius: 4px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background 0.3s;
-        margin-right: 0;
-        flex: 1;
-    }
-    
-    input[type="submit"]:hover {
-        background-color: #0077B6;
-    }
+.submit-button,
+.cancel-button {
+    width: 200px; 
+}
 
-    input[type="submit"][value="編集"] {
-        margin-right: 10px; /* "編集"ボタンの右に余白を設定 */
-    }
-    
-    input[type="submit"][value="キャンセル"] {
-        background-color: #c8c8c8;
-        margin-left: 10px;
-    }
-    
-    input[type="submit"][value="キャンセル"]:hover {
-        background-color: #949494;
-    }
-    
-    .text-center {
-        display: flex;
-        justify-content: center; /* 中央寄せに変更 */
-    }
+a{
+    color: #ff7f50;
 }
