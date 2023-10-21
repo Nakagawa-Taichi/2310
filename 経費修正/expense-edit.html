@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>経費修正</title>
+    <link rel="stylesheet" href="expense-edit.css">
+</head>
+<body>
+    <div class="container">
+        <h1>経費修正</h1>
+        <form action="submit_url" method="post">
+            <div class="form-group">
+                <label for="user-id">ユーザー名</label>
+                <input type="text" id="user-id" name="user-id">
+            </div>
+            <div class="form-group">
+                <label for="date">申請日</label>
+                <input type="date" id="date" name="date">
+            </div>
+            <div class="form-group">
+                <label for="category">経費項目</label>
+                <select id="category" name="category">
+                    <option value="transport">食事</option>
+                    <option value="transport">交通費</option>
+                    <option value="transport">宿泊費</option>
+                    <option value="transport">その他</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="amount">金額</label>
+                <input type="text" id="amount" name="amount">
+            </div>
+            <div class="form-group">
+                <label for="comment">備考</label>
+                <textarea id="comment" name="comment" rows="4"></textarea>
+            </div>
+            <div class="text-center">
+                <input type="submit" value="編集">
+                <input type="submit" value="キャンセル">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
