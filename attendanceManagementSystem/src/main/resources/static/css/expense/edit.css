@@ -9,11 +9,13 @@ body {
 
 .container {
     max-width: 100%;
-    margin: 20px auto;
+    margin: 0 auto;
     background-color: #ffffff;
     padding: 20px;
     border-radius: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h1 {
@@ -30,6 +32,7 @@ label {
     font-weight: bold;
     color: #333;
     margin-bottom: 8px;
+
 }
 
 input[type="text"],
@@ -51,10 +54,8 @@ input[type="date"]:focus,
 select:focus,
 input[type="number"]:focus,
 textarea:focus {
-    border-color: #ff7f50;
+    border-color:#ff7f50;
 }
-
-/* 以下のボタンのコードの被りを削除しました。 */
 
 .submit-button {
     background-color: #ff7f50;
