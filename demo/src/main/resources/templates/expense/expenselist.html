@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>経費一覧</title>
+	<link rel="stylesheet" href="expenselist.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1>経費一覧</h1>
+		<table class="expense-table">
+			<thead>
+				<tr>
+					<th>ユーザーID</th>
+					<th>申請日</th>
+					<th>経費項目</th>
+					<th>金額</th>
+					<th>備考</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="expense : ${expenses}">
+					<td th:text="*{user_id}"></td>
+					<td th:text="${#dates.format(expense.application_date, 'yyyy/MM/dd')}"></td>
+					<td th:text="*{expense_category}"></td>
+					<td th:text="*{amount}"></td>
+					<td th:text="*{description}"></td>
+
+				</tr>
+
+			</tbody>
+		</table>
+		<div class="back-button">
+			<a href="/mypage">マイページに戻る</a>
+
+		</div>
+	</div>
+</body>
+
+</html>
