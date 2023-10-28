@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
 }
 
 .container {
@@ -41,13 +42,6 @@ h1 {
     background-color: #fff;
 }
 
-.detail-link {
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-    text-decoration: none;
-}
-
 .detail-button {
     border: 1px solid #000;
     background-color: #E5E5E5;
@@ -57,6 +51,7 @@ h1 {
     cursor: pointer;
     transition: background-color 0.3s, border-color 0.3s;
     border-radius: 5px; 
+    text-decoration: none;
 }
 
 .detail-button:hover {
