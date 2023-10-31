@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="ja">
+<html xmlns="http://www.w3.org/1999/xhtml"
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>経費申請フォーム</title>
-    <link rel="stylesheet" href="expense.css">
+    <link rel="stylesheet" href="add.css">
 </head>
 <body>
     <div class="container">
+		<div th:if="${validationError}" th:each="error : ${validationError}">
+			<label class="text-danger" th:text="${error}"></label>
         <h1>経費申請フォーム</h1>
         <form action="file:///c%3A/LetsEngineer/curriculum/JavaStudy/%E9%96%8B%E7%99%BA/HTML/complete.html" method="post">
             <div class="form-group">
