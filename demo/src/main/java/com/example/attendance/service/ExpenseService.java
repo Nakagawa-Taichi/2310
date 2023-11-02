@@ -1,57 +1,64 @@
 package com.example.attendance.service;
 
-import java.util.Date;
+
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.attendance.dto.ExpenseUpdateRequest;
+import com.example.attendance.dto.ExpenseRequest;
 import com.example.attendance.entity.ExpenseEntity;
 import com.example.attendance.repository.ExpenseRepository;
 
-/**
- * 経費のService
- */
 @Service
 @Transactional(rollbackFor = Exception.class)
 public class ExpenseService {
-  
-  /**
-   * 経費テーブルへのRepository
-   */
-  @Autowired
-  private ExpenseRepository expenseRepository;
-  
-  /**
-   * 経費情報 全検索
-   * @return 検索結果
-   */
-  public List<ExpenseEntity> searchAll() {
-    return expenseRepository.findAll();
-  }
-  
-  /**
-   * 経費情報 主キー検索
-   * @return 検索結果
-   */
-  public ExpenseEntity findById(Long id) {
-    return expenseRepository.findById(id).orElse(null);
-  }
-  
-  /**
-   * 経費情報 更新
-   * @param expenseUpdateRequest 経費更新リクエスト
-   */
-  public void update(ExpenseUpdateRequest expenseUpdateRequest) {
-	  ExpenseEntity expense = findById(expenseUpdateRequest.getId());
-	  if (expense != null) {
-	    expense.setExpenseCategory(expenseUpdateRequest.getCategory());
-	    expense.setAmount(expenseUpdateRequest.getAmount());
-	    expense.setDescription(expenseUpdateRequest.getDescription());
-	    expense.setApplicationDate(new Date());
-	    expenseRepository.save(expense);
-	  }
+	
+
+	/**
+	   * ユーザー情報 Repository
+	   */
+    @Autowired
+    private ExpenseRepository expenseRepository;
+
+    /**
+     * ユーザー情報 全検索
+     * @return 検索結果
+     */
+	public List<ExpenseEntity> searchAll() {
+		// TODO 自動生成されたメソッド・スタブ
+		return expenseRepository.findAll();
+	}
+    
+
+	/**
+	   * ユーザー情報 新規登録
+	   * @param user ユーザー情報
+	   */
+
+	 public void update(ExpenseRequest expenseRequest) {
+		  ExpenseEntity expense = findById(expenseRequest.getUser_id());
+		  if (expense != null) {
+		    expense.setExpenseCategory(expenseRequest.getexpense_category());
+		    expense.setAmount(expenseRequest.getAmount());
+		    expense.setDescription(expenseRequest.getDescription());
+		    expense.setApplicationDate(new Date(0));
+		    expenseRepository.save(expense);
+		  }
+		}
+
+	private ExpenseEntity findById(Long user_id) {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
+
+
+
+
+	public void create(ExpenseRequest expenseRequest) {
+		// TODO 自動生成されたメソッド・スタブ
+		
 	}
 }

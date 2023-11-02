@@ -38,4 +38,9 @@ public class ExpenseRequest implements Serializable {
    */
   @Size(max = 50, message = "備考は50文字以下で入力してください")
   private String description;
+
+public String getexpense_category() {
+	// TODO 自動生成されたメソッド・スタブ
+	return null;
+}
 }
