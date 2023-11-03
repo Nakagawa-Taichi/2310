@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #f6f6f6;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+.container {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+h1 {
+    color: #ff7f50;
+    text-align: center;
+    font-size: 24px;
+}
+
+p {
+    text-align: left;
+}
+
+.attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.attendance-table th, .attendance-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.attendance-table th {
+    background-color: #464646;
+    color: #fff;
+}
+
+.attendance-table tr:nth-child(even) {
+    background-color: whitesmoke;
+}
+
+.attendance-table tr:hover {
+    background-color: #b8b8b8;
+}
+
+.back-button {
+    margin-top: 20px;
+    text-align: center;
+}
