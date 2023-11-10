@@ -1,4 +1,5 @@
-package com.example.attendance.dto;
+package com.example.demo.dto;
+
 
 import java.io.Serializable;
 import java.util.Date;
@@ -14,25 +15,25 @@ import lombok.Data;
  */
 @Data
 public class ExpenseRequest implements Serializable {
-	
+
   /**
   * ユーザーID
   */
   @NotNull(message = "ユーザーIDを入力してください")
   private Long user_id;
-  
+
   /**
    * 日付
    */
   @NotNull(message = "日付を選択してください")
   private Date applicationDate;
-  
+
   /**
    * 経費金額
    */
   @Digits(integer = 9, fraction = 0, message = "経費金額は9桁以内の数字で入力してください")
   private Integer amount;
-  
+
   /**
    * 備考
    */

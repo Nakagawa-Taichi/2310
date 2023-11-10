@@ -1,5 +1,4 @@
-package com.example.attendance.controller;
-
+package com.example.demo.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,9 +14,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.example.attendance.dto.ExpenseRequest;
-import com.example.attendance.entity.ExpenseEntity;
-import com.example.attendance.service.ExpenseService;
+import com.example.demo.dto.ExpenseRequest;
+import com.example.demo.entity.ExpenseEntity;
+import com.example.demo.service.ExpenseService;
 
 @Controller
 public class ExpenseController {
@@ -73,5 +72,5 @@ public class ExpenseController {
 	public static Object getExpenseentity() {
 		return ExpenseEntity;
 	}
-  
+
 }

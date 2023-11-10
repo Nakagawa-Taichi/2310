@@ -1,4 +1,5 @@
-package com.example.attendance.entity;
+package com.example.demo.entity;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,38 +14,38 @@ import lombok.Data;
 /**
 * ユーザー情報 Entity
 */
-@Entity  
-@Data  
-@Table(name = "user" , schema = "public" ) 
+@Entity
+@Data
+@Table(name = "user" , schema = "public" )
 public class UserEntity  {
 
 	/**
 	 * ID
 	 */
-	@Id 
-	@GeneratedValue(strategy = GenerationType.IDENTITY)  
-	@Column(name = "user_id")  
-	private Long id; 
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "user_id")
+	private Long id;
+
 	/**
 	 * 名前
 	 */
-	
-	@Column(name = "name")  
-	private String name; 
-	
+
+	@Column(name = "name")
+	private String name;
+
 	/**
 	 * カナ
 	 */
-	@Column(name = "kana")  
+	@Column(name = "kana")
 	private String kana;
-	
+
 	/**
 	 * メールアドレス
 	 */
 	@Column(name = "email")
 	private String email;
-	
+
 	/**
 	 * パスワード
 	 */

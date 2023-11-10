@@ -1,5 +1,4 @@
-package com.example.attendance.service;
-
+package com.example.demo.service;
 
 import java.sql.Date;
 import java.util.List;
@@ -8,14 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.attendance.dto.ExpenseRequest;
-import com.example.attendance.entity.ExpenseEntity;
-import com.example.attendance.repository.ExpenseRepository;
+import com.example.demo.dto.ExpenseRequest;
+import com.example.demo.entity.ExpenseEntity;
+import com.example.demo.repository.ExpenseRepository;
 
 @Service
 @Transactional(rollbackFor = Exception.class)
 public class ExpenseService {
-	
+
 
 	/**
 	   * ユーザー情報 Repository
@@ -31,7 +30,7 @@ public class ExpenseService {
 		// TODO 自動生成されたメソッド・スタブ
 		return expenseRepository.findAll();
 	}
-    
+
 
 	/**
 	   * ユーザー情報 新規登録
@@ -59,6 +58,6 @@ public class ExpenseService {
 
 	public void create(ExpenseRequest expenseRequest) {
 		// TODO 自動生成されたメソッド・スタブ
-		
+
 	}
 }

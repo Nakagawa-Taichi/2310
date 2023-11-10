@@ -1,4 +1,5 @@
-package com.example.attendance.dto;
+package com.example.demo.dto;
+
 
 public class AttendanceRequest {
     private Integer userId;
