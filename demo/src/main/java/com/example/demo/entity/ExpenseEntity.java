@@ -1,6 +1,6 @@
 
 package com.example.demo.entity;
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,14 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import lombok.Data;
 /**
  * 経費情報 Entity(データベースへ登録するためのデータを格納しておくためのクラス)
  */
-@Entity
 @Data
+@Entity
 @Table(name = "expense" , schema = "public")
 public class ExpenseEntity {
 
@@ -26,19 +24,18 @@ public class ExpenseEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "expense_id")
-			private Long id;
+	private Integer id;
 
 	/**
 	 * ユーザーID
 	 */
 	@Column(name = "user_id")
-			private int userId;
+	private int userId;
 	/**
 	 *申請日
 	 */
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name = "application_date")
-	private Date applicationDate;
+	private LocalDate applicationDate;
 
 	/**
 	 *経費項目
@@ -57,12 +54,5 @@ public class ExpenseEntity {
 	 */
 	@Column(name = "description")
 	private String	 description;
-
-	public void setExpenseCategory(Object getexpense_category) {
-		// TODO 自動生成されたメソッド・スタブ
-		
-	}
-
-
 
 }

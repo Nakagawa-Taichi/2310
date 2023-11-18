@@ -1,8 +1,5 @@
 package com.example.demo.service;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,28 +39,15 @@ public class ExpenseService {
 	 */
 	
 	
-	private Date applicationDate;
-
 	public void update(ExpenseRequest expenseRequest) {
-		Date now = new Date();
 		ExpenseEntity expense = new ExpenseEntity();
-		
-	    java.util.Date applicationDate = convertStringToDate(expenseRequest.getApplicationDate()); 
-		expense.setExpenseCategory(expenseRequest.getExpenseCategory().toString());
+		expense.setUserId(expenseRequest.getUser_id());
+		expense.setApplicationDate(expenseRequest.getApplicationDate());
+		expense.setExpenseCategory(expenseRequest.getExpenseCategory());
 		expense.setAmount(expenseRequest.getAmount());
 		expense.setDescription(expenseRequest.getDescription());
 		expenseRepository.save(expense);
 
-	}
-	
-	private java.util.Date convertStringToDate(String dateString) {
-	    SimpleDateFormat sdf  = new SimpleDateFormat("yyyy-MM-dd");
-	    try {
-	        return sdf.parse(dateString);
-	    } catch (ParseException e) {
-	        e.printStackTrace();
-	        return null;
-	    }
 	}
 
 }
