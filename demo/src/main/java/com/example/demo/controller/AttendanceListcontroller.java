@@ -1,4 +1,4 @@
-package com.example.attendance.controller;
+package com.example.demo.controller;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.example.attendance.entity.AttendanceListEntity;
-import com.example.attendance.service.AttendanceListService;
+import com.example.demo.entity.AttendanceListEntity;
+import com.example.demo.service.AttendanceListService;
 
 @Controller
 public class AttendanceListcontroller {
@@ -16,11 +16,11 @@ public class AttendanceListcontroller {
 	@Autowired
     private AttendanceListService attendanceListService;
 
-    @GetMapping(value = "/attendance/Attendance")
+    @GetMapping(value = "/attendance/AttendanceList")
     public String displayList(Model model) {
     	System.out.println(1);
-        List<AttendanceListEntity> attendanceList = attendanceListService.serchAll();
+        List<AttendanceListEntity> attendanceList = attendanceListService.searchAll();
         model.addAttribute("attendanceList", attendanceList);
-        return "/correction/Attendance";
+        return "/attendance/AttendanceList";
     }
 }

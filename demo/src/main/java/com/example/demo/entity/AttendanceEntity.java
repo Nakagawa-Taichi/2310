@@ -21,9 +21,6 @@ public class AttendanceEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "No")
-    private Integer no;
-
     @Column(name = "ユーザーID")
     private Integer userId;
 
@@ -51,12 +48,5 @@ public class AttendanceEntity {
     @Column(name = "備考")
     private String remarks;
 
-    public Integer getNo() {
-        return no;
-    }
-
-    public void setNo(Integer no) {
-        this.no = no;
-    }
 
 }
