@@ -1,6 +1,6 @@
 package com.example.attendance.entity;
 
-import java.io.Serializable;
+
 import java.sql.Time;
 import java.util.Date;
 
@@ -15,38 +15,47 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "attend", schema = "public")
-public class AttendanceEntity implements Serializable {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "user_id")
-	private Long user_id;
-	
-	@Column(name= "name")
-	private String name;
-	
-	@Column(name = "kana")
-	private String kana;
-	
-	@Column(name = "status")
-	private String status;
-	
-	@Column(name = "attendance_date")
-	private Date attendance_date;
-	
-	@Column(name = "start_time")
-	private Time start_time;
-	
-	@Column(name = "leaving_date")
-	private Date leaving_date;
-	
-	@Column(name = "end_time")
-	private Time end_time;
-	
-	@Column(name = "working_hours")
-	private Time working_hours;
-	
-	@Column(name = "break_time")
-	private Time break_time;
+@Table(name = "勤怠テーブル")
+public class AttendanceEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "No")
+    private Integer no;
+
+    @Column(name = "ユーザーID")
+    private Integer userId;
+
+    @Column(name = "ステータス")
+    private String status;
+
+    @Column(name = "出勤日")
+    private Date attendanceDate;
+
+    @Column(name = "出勤時間")
+    private Time attendanceTime;
+
+    @Column(name = "退勤日")
+    private Date leavingDate;
+
+    @Column(name = "退勤時間")
+    private Time leavingTime;
+
+    @Column(name = "稼働時間")
+    private Time workingHours;
+
+    @Column(name = "休憩時間")
+    private Time breakTime;
+
+    @Column(name = "備考")
+    private String remarks;
+
+    public Integer getNo() {
+        return no;
+    }
+
+    public void setNo(Integer no) {
+        this.no = no;
+    }
+
 }

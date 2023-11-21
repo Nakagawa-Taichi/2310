@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>出勤報告</title>
+    <link rel="stylesheet" href="start.css">
+    <style>
+        label {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 1em;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #FF7F50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>出勤報告</h1>
+
+        <form id="attendanceForm">
+            <label for="userId">UserID:</label>
+            <input type="text" id="userId" name="userId" required>
+
+            <label for="attendanceId">勤怠ID:</label>
+            <input type="text" id="attendanceId" name="attendanceId" required>
+
+            <label for="status">ステータス:</label>
+            <select id="status" name="status" required>
+                <option value="">選択してください</option>
+                <option value="出勤">出勤</option>
+                <option value="遅刻">遅刻</option>
+                <option value="欠席">欠席</option>
+                <option value="代休">代休</option>
+                <option value="休日">休日</option>
+                <option value="有給">有給</option>
+                <option value="有給">その他</option>
+            </select>
+
+            <label for="attendanceDate">出勤日:</label>
+            <div class="input-group">
+                <input type="date" id="attendanceDate" name="attendanceDate" required>
+            </div>
+
+            <label for="attendanceTime">出勤時間:</label>
+            <div class="input-group">
+                <input type="time" id="attendanceTime" name="attendanceTime" required>
+            </div>
+
+            <label for="remarks">備考:</label>
+            <textarea id="remarks" name="remarks"></textarea>
+
+            <div class="error-message" id="errorMessage"></div>
+
+            <div class="button-group">
+                <input type="submit" value="登録">
+                <input type="button" value="戻る" onclick="history.back()">
+            </div>
+        </form>
+
+        <script>
+            document.getElementById('attendanceForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                var userId = document.getElementById('userId').value;
+                var attendanceId = document.getElementById('attendanceId').value;
+                var status = document.getElementById('status').value;
+                var attendanceDate = document.getElementById('attendanceDate').value;
+                var attendanceTime = document.getElementById('attendanceTime').value;
+
+                // ここで追加のバリデーション
+
+                // バリデーションが成功した場合はフォームを送信
+                this.submit();
+            });
+        </script>
+
+    </center>
+</body>
+
+</html>

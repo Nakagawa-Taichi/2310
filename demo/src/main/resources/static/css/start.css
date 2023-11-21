@@ -1,0 +1,43 @@
+h1 {
+    color: #FF7F50;
+    /* タイトルの色を指定 */
+    text-align: center;
+    /* タイトルを中央に配置 */
+}
+
+.form-group {
+    text-align: center;
+    /* フォームを中央に配置 */
+    margin: 0 auto;
+    /* マージンを自動で調整 */
+    max-width: 400px;
+    /* フォームの最大幅を指定 */
+}
+
+.button-group {
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 1em;
+}
+
+.input-group input[type="date"],
+.input-group input[type="time"] {
+    width: calc(100%);
+}
+
+.button-group input[type="submit"],
+.button-group input[type="button"],
+.button-group a {
+    background-color: #FF7F50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}

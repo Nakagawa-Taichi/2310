@@ -1,0 +1,54 @@
+/* タイトルのスタイル */
+h1 {
+    color: #FF7F50;
+    text-align: center;
+}
+
+/* フォームのスタイル */
+.form-group {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+/* ボタンのスタイル */
+.button-group {
+    text-align: center;
+}
+
+.button-group input[type="submit"],
+.button-group input[type="button"],
+.button-group a {
+    background-color: #FF7F50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+/* 入力グループのスタイル */
+.input-group {
+    margin-bottom: 1em;
+}
+
+/* 日付と時間の入力スタイル */
+.input-group input[type="date"],
+.input-group input[type="time"],
+input[type="date"],
+input[type="time"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 1em;
+    box-sizing: border-box;
+}
+
+/* 日付と時間の入力スタイル (input-group内) */
+.input-group input[type="date"],
+.input-group input[type="time"] {
+    width: calc(100%);
+}
