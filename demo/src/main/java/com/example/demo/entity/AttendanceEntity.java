@@ -1,4 +1,5 @@
-package com.example.attendance.entity;
+package com.example.demo.entity;
+
 
 
 import java.sql.Time;

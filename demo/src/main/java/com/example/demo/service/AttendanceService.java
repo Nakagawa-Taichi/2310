@@ -1,4 +1,6 @@
-package com.example.attendance.service;
+package com.example.demo.service;
+
+
 
 import java.util.List;
 import java.util.Optional;
@@ -6,9 +8,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.attendance.dto.AttendanceRequest;
-import com.example.attendance.entity.AttendanceEntity;
-import com.example.attendance.repository.AttendanceRepository;
+import com.example.demo.dto.AttendanceRequest;
+import com.example.demo.entity.AttendanceEntity;
+import com.example.demo.repository.AttendanceRepository;
 
 @Service
 public class AttendanceService {

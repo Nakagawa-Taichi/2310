@@ -1,4 +1,5 @@
-package com.example.attendance.dto;
+package com.example.demo.dto;
+
 
 import java.io.Serializable;
 
@@ -17,7 +18,7 @@ public class ExpenseUpdateRequest extends UserRequest implements Serializable {
 
   @NotNull
   private Long id;
-  
+
   @NotNull
   private String category;
 
