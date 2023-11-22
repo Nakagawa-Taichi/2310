@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="ja">
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>勤怠一覧</title>
-	<link rel="stylesheet" href="Attendance.css">
+	<link rel="stylesheet" th:href="@{/path/to/Attendance.css}">
 </head>
 <body>
 	<div class="container">
 		<h1>勤怠一覧</h1>
 		<p>年月</p>
-		<p th:text="${record.name}"></p>
-		<table class="attendance-table">
+<!--		<p th:text="${record.user_id}"></p>
+-->		<table class="attendance-table">
 			<thead>
 				<tr>
-					<th>ユーザーID</th>>
+					<th>ユーザーID</th>
 					<th>出勤日</th>
 					<th>退勤日</th>
 					<th>ステータス</th>
@@ -31,21 +33,11 @@
 					<td th:text="${record.attendance_date}"></td>
 					<td th:text="${record.leaving_date}"></td>
 					<td th:text="${record.status}"></td>
-					<td th:text="${record.start_time}"></td>
-					<td th:text="${record.end_time}"></td>
-					<td th:text="${record.break_time}">00:00</td>
-					<td>00:00</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>月日</td>
-					<td>月日</td>
-					<td>、</td>
-					<td>00:00</td>
-					<td>00:00</td>
-					<td>00:00</td>
-					<td>00:00</td>
-					<td></td>
+					<td th:text="${record.start_time} ? ${record.start_time} : '00:00'"></td>
+					<td th:text="${record.end_time} ? ${record.end_time} : '00:00'"></td>
+					<td th:text="${record.break_time} ? ${record.break_time} : '00:00'"></td>
+					<td th:text="${record.working_hours} ? ${record.working_hours} : '00:00'"></td>
+					<td th:text="${record.remarks}"></td>
 				</tr>
 			</tbody>
 		</table>
