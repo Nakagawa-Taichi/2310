@@ -1,6 +1,5 @@
-
 package com.example.demo.entity;
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,11 +9,12 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Data;
+
 /**
- * 経費情報 Entity(データベースへ登録するためのデータを格納しておくためのクラス)
+ * 経費情報 Entity
  */
-@Data
 @Entity
+@Data
 @Table(name = "expense" , schema = "public")
 public class ExpenseEntity {
 
@@ -22,20 +22,21 @@ public class ExpenseEntity {
 	 *経費ID
 	 */
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "expense_id")
-	private Integer id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
 	/**
 	 * ユーザーID
 	 */
 	@Column(name = "user_id")
 	private int userId;
+	
 	/**
 	 *申請日
 	 */
 	@Column(name = "application_date")
-	private LocalDate applicationDate;
+	private Date applicationDate;
 
 	/**
 	 *経費項目
@@ -53,6 +54,10 @@ public class ExpenseEntity {
 	 * 備考
 	 */
 	@Column(name = "description")
-	private String	 description;
+	private String description;
+
+	public void setExpenseCategory(String expenseCategory) {
+	    this.expenseCategory = expenseCategory;
+	}
 
 }
