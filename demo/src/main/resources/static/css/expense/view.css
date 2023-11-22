@@ -18,7 +18,7 @@ h1 {
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 label {
@@ -51,7 +51,9 @@ textarea:focus {
     border-color:#ff7f50;
 }
 
-.submit-button {
+
+
+.btn-edit {
     background-color: #ff7f50;
     color: #fff;
     border: none;
@@ -60,14 +62,14 @@ textarea:focus {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
-    margin: 20px 20px 0 0;
+    margin-right: 20px 20px 0 0;
 }
 
-.submit-button:hover {
+.btn-edit:hover {
     background-color: #f57546;
 }
 
-.cancel-button {
+.btn-disabled {
     background-color: #c8c8c8;
     color: #fff;
     border: none;
@@ -78,11 +80,30 @@ textarea:focus {
     transition: background-color 0.3s ease-in-out;
 }
 
-.cancel-button:hover {
+.btn-disabled:hover {
     background-color: #949494;
 }
 
-.submit-button,
-.cancel-button {
-    width: 200px; 
+.btn-return {
+    background-color: #c8c8c8;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-return {
+    background-color: #949494;
+}
+
+.btn-edit,
+.btn-disabled,
+.btn-return {
+    width: 140px; 
+    margin-right: 20px; 
+    text-decoration: none;
+    display: inline-block;
 }

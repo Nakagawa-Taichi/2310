@@ -1,23 +1,27 @@
 <!DOCTYPE html>
-<html　xmlns:th="http://www.thymeleaf.org">　<!-- thymleaf化に必要な記述を追加 -->
+<html　xmlns:th="http://www.thymeleaf.org">
 <head>
 	<link rel="stylesheet" type="text/css" href="/css/expense/edit.css">
 </head>
 <body>
 	<div class="container">
+		<div th:if="${validationError}" th:each="error : ${validationError}">
+		  <label class="text-danger" th:text="${error}"></label>
+		</div>
 		<h1>経費修正フォーム</h1>
-        <form action="/expense/update" method="post" th:object="${expenseEntity}">
+        <form th:action="@{/expense/update}" th:object="${expenseUpdateRequest}" th:method="post">
+			<input type="hidden" th:field="*{id}" />
             <div class="form-group">
                 <label for="userId">ユーザーID:</label>
-                <input type="text" id="userId" th:field="*{userId}" disabled>
+                <input type="text" id="userId" th:field="*{userId}">
             </div>
 			<div class="form-group">
-			    <label for="applicationDate">日付:</label>
-			    <input type="date" id="applicationDate" th:field="*{applicationDate}" required>
+			    <label for="applicationaDate">申請日:</label>
+			    <input type="date" id="applicationDate" th:field="*{applicationDate}">
 			</div>
             <div class="form-group">
                 <label for="expenseCategory">経費項目:</label>
-                <select id="expenseCategory" th:field="*{expenseCategory}" required>
+                <select id="expenseCategory" th:field="*{category}" required>
                     <option value="食事">食事</option>
                     <option value="交通費">交通費</option>
                     <option value="宿泊費">宿泊費</option>
@@ -26,12 +30,12 @@
             </div>
             <div class="form-group">
                 <label for="amount">経費金額:</label>
-                <input type="number" id="amount" th:field="*{amount}" min="0" required>
+                <input type="number" id="amount" th:field="*{amount}" min="0">
             </div>
             <div class="form-group">
                 <label for="description">備考:</label>
                 <textarea id="description" th:field="*{description}" rows="4" maxlength="50"></textarea>
-                <div th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Description Error</div>
+                <div th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Description 
             </div>
 		    <div class="form-group">
 		        <button class="submit-button" type="submit">保存する</button>
