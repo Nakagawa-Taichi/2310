@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>出勤報告</title>
+    <link rel="stylesheet" th:href="@{/user/startic/css/start.css}">
+</head>
+
+<body>
+    <div class="container">
+        <div th:if="${validationError}" th:each="error : ${validationError}">
+            <label class="text-danger" th:text="${error}"></label>
+        </div>
+
+        <h1>出勤報告</h1>
+
+	<form th:action="@{/attendance/create}" th:object="${attendanceRequest}" method="post">
+
+            <div class="form-group">
+                <label for="user_id">UserID:</label>
+                <input type="text" th:fieid="*{user_id}" name="user_id">
+            </div>
+
+            <div class="attendance-group">
+                <label for="status">ステータス:</label>
+                <select id="status" name="status">
+                    <option value="">選択してください</option>
+                    <option value="出勤">出勤</option>
+                    <option value="遅刻">遅刻</option>
+                    <option value="欠席">欠席</option>
+                    <option value="代休">代休</option>
+                    <option value="休日">休日</option>
+                    <option value="有給">有給</option>
+                    <option value="その他">その他</option>
+                </select>
+            </div>
+
+            <label for="attendance_date">出勤日:</label>
+            <div class="input-group">
+                <input type="date" id="attendanceDate" name="attendanceDate">
+            </div>
+
+            <label for="start_time">出勤時間:</label>
+            <div class="input-group">
+                <input type="time" id="attendanceTime" name="attendanceTime">
+            </div>
+
+            <label for="remarks">備考:</label>
+            <textarea id="remarks" name="remarks"></textarea>
+
+<!--			<div class="error-message" id="errorMessage" th:if="${#fields.hasErrors('user_id')}">
+-->	    	<!--<p th:errors="*{user_id}"></p>-->
+			</div>
+
+            <div class="button-group">
+                <input type="submit" value="登録">
+            </div>
+        </form>
+        <input type="button" value="戻る" onclick="history.back()">
+    </div>
+</body>
+</html>

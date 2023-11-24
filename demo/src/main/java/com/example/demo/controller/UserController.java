@@ -35,5 +35,17 @@ public class UserController {
     model.addAttribute("userlist", userlist);
     return "user/list";
   }
+  
+  // ユーザー情報編集画面の追加
+  /**
+   * ユーザー情報編集画面を表示
+   *
+   * @param  model Model
+   * @return  ユーザー情報一覧画面のHTMLのパス
+   */
+  @GetMapping(value = "/user/edit/{id}")
+  public String displayEdit(Model model) {
+    return "user/edit";
+  }
 }
 

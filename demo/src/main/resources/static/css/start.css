@@ -5,6 +5,11 @@ h1 {
     /* タイトルを中央に配置 */
 }
 
+body {
+    text-align: center;
+    /* 文字を中央に配置 */
+}
+
 .form-group {
     text-align: center;
     /* フォームを中央に配置 */
@@ -41,3 +46,35 @@ h1 {
     margin: 4px 2px;
     cursor: pointer;
 }
+
+.label {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+
+.input[type="text"],
+select,
+textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 1em;
+            box-sizing: border-box;
+        }
+
+input[type="submit"] {
+            background-color: #FF7F50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+.error-message {
+            color: red;
+        }
+        
