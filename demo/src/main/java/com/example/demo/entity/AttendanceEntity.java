@@ -1,8 +1,8 @@
 package com.example.demo.entity;
 
 
-import java.sql.Date;
-import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,48 +11,40 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Data;
+
 @Entity
-@Table(name = "勤怠テーブル")
+@Data
+@Table(name = "new_attendance")
 public class AttendanceEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "No")
-    private Integer no;
-
-    @Column(name = "ユーザーID")
-    private Integer userId;
-
-    @Column(name = "ステータス")
+    
+    @Column(name = "user_id")
+    private Integer user_id;
+    
+    @Column(name = "status")
     private String status;
 
-    @Column(name = "出勤日")
-    private Date attendanceDate;
+    @Column(name = "attendance_date")
+    private LocalDate attendance_date;
 
-    @Column(name = "出勤時間")
-    private Time attendanceTime;
+    @Column(name = "start_time")
+    private LocalTime start_time;
 
-    @Column(name = "退勤日")
-    private Date leavingDate;
+    @Column(name = "leaving_date")
+    private LocalDate leavingDate;
 
-    @Column(name = "退勤時間")
-    private Time leavingTime;
+    @Column(name = "end_time")
+    private LocalTime endTime;
 
-    @Column(name = "稼働時間")
-    private Time workingHours;
+    @Column(name = "working_hours")
+    private LocalTime workingHours;
+    
+    @Column(name = "break_time")
+    private LocalTime breakTime;
 
-    @Column(name = "休憩時間")
-    private Time breakTime;
-
-    @Column(name = "備考")
+    @Column(name = "remarks")
     private String remarks;
-
-    public Integer getNo() {
-        return no;
-    }
-
-    public void setNo(Integer no) {
-        this.no = no;
-    }
-
 }
