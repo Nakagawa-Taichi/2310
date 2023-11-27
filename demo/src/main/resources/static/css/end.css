@@ -4,11 +4,15 @@ h1 {
     text-align: center;
 }
 
-/* フォームのスタイル */
+body {
+    text-align: center;
+}
+
+/* フォーム全体のスタイル */
 .form-group {
     text-align: center;
     margin: 0 auto;
-    max-width: 400px;
+    max-width: 100%;
 }
 
 /* ボタンのスタイル */
@@ -18,7 +22,8 @@ h1 {
 
 .button-group input[type="submit"],
 .button-group input[type="button"],
-.button-group a {
+.button-group a,
+.submitButton {
     background-color: #FF7F50;
     border: none;
     color: white;
@@ -36,11 +41,12 @@ h1 {
     margin-bottom: 1em;
 }
 
-/* 日付と時間の入力スタイル */
-.input-group input[type="date"],
-.input-group input[type="time"],
-input[type="date"],
-input[type="time"] {
+/* 共通の入力スタイル */
+input[type="text"],
+select,
+textarea,
+input[type="time"],
+input[type="date"] {
     width: 100%;
     padding: 8px;
     margin-bottom: 1em;
@@ -50,5 +56,14 @@ input[type="time"] {
 /* 日付と時間の入力スタイル (input-group内) */
 .input-group input[type="date"],
 .input-group input[type="time"] {
-    width: calc(100%);
+    width: 100%;
+}
+
+.label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.error-message {
+    color: red;
 }

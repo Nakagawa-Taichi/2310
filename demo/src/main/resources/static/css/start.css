@@ -1,40 +1,29 @@
+/* タイトルのスタイル */
 h1 {
     color: #FF7F50;
-    /* タイトルの色を指定 */
     text-align: center;
-    /* タイトルを中央に配置 */
 }
 
 body {
     text-align: center;
-    /* 文字を中央に配置 */
 }
 
+/* フォーム全体のスタイル */
 .form-group {
     text-align: center;
-    /* フォームを中央に配置 */
     margin: 0 auto;
-    /* マージンを自動で調整 */
-    max-width: 400px;
-    /* フォームの最大幅を指定 */
+    max-width: 100%;
 }
 
+/* ボタンのスタイル */
 .button-group {
     text-align: center;
 }
 
-.input-group {
-    margin-bottom: 1em;
-}
-
-.input-group input[type="date"],
-.input-group input[type="time"] {
-    width: calc(100%);
-}
-
 .button-group input[type="submit"],
 .button-group input[type="button"],
-.button-group a {
+.button-group a,
+.submitButton {
     background-color: #FF7F50;
     border: none;
     color: white;
@@ -47,34 +36,34 @@ body {
     cursor: pointer;
 }
 
-.label {
-            display: block;
-            margin-bottom: 0.5em;
-        }
+/* 入力グループのスタイル */
+.input-group {
+    margin-bottom: 1em;
+}
 
-.input[type="text"],
+/* 共通の入力スタイル */
+input[type="text"],
 select,
-textarea {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 1em;
-            box-sizing: border-box;
-        }
+textarea,
+input[type="time"],
+input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 1em;
+    box-sizing: border-box;
+}
 
-input[type="submit"] {
-            background-color: #FF7F50;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-        }
+/* 日付と時間の入力スタイル (input-group内) */
+.input-group input[type="date"],
+.input-group input[type="time"] {
+    width: 100%;
+}
+
+.label {
+    display: block;
+    margin-bottom: 0.5em;
+}
 
 .error-message {
-            color: red;
-        }
-        
+    color: red;
+}
