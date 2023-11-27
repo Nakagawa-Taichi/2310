@@ -1,12 +1,9 @@
 package com.example.demo.dto;
 
-
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -40,13 +37,12 @@ public class ExpenseRequest implements Serializable {
 	/**
 	 * 経費金額
 	 */
-	@Digits(integer = 9, fraction = 0, message = "経費金額は9桁以内の数字で入力してください")
+	@NotNull(message = "金額を入力してください")
 	private Integer amount;
 
 	/**
 	 * 備考
 	 */
-	@Size(max = 50, message = "備考は50文字以下で入力してください")
 	private String description;
 
 
