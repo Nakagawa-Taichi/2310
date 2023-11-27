@@ -1,13 +1,13 @@
 package com.example.demo.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.dto.AttendanceRequest;
+import com.example.demo.dto.AttendanceUpdateRequest;
 import com.example.demo.entity.AttendanceEntity;
 import com.example.demo.repository.AttendanceRepository;
 
@@ -31,19 +31,33 @@ public class AttendanceService {
 	
 	//ユーザー情報　主キー検索
 	public AttendanceEntity findById(Integer attendance_id) {
-	      Optional<AttendanceEntity> userOptional = attendanceRepository.findById(attendance_id);
-	      return userOptional.orElse(null); // エンティティが存在しない場合はnullを返す。
+	      return attendanceRepository.findById(attendance_id).get();
 	  }
 
     // 出勤報告の処理を行うメソッド
     public void create(AttendanceRequest attendanceRequest) {
         // ここでデータベースへの保存などを実装
         AttendanceEntity attendanceEntity = new AttendanceEntity();
-        attendanceEntity.setUser_id(attendanceRequest.getUser_id());
+        attendanceEntity.setUser_id(attendanceRequest.getUserId());
         attendanceEntity.setStatus(attendanceRequest.getStatus());
-        attendanceEntity.setAttendance_date(attendanceRequest.getAttendance_date());
+        attendanceEntity.setAttendance_date(attendanceRequest.getAttendanceDate());
         attendanceEntity.setStart_time(attendanceRequest.getStart_time());
         attendanceEntity.setRemarks(attendanceRequest.getRemarks());
         attendanceRepository.save(attendanceEntity);
+    }
+
+    /* 勤怠登録情報 更新
+    * @param  情報更新
+    */
+    public void update(AttendanceUpdateRequest attendanceUpdateRequest) {
+        AttendanceEntity attendance = findById(attendanceUpdateRequest.getAttendanceId());
+        attendance.setUser_id(attendanceUpdateRequest.getUserId());
+        attendance.setStatus(attendanceUpdateRequest.getStatus());
+        attendance.setAttendance_date(attendanceUpdateRequest.getAttendanceDate());
+        attendance.setLeavingDate(attendanceUpdateRequest.getLeavingDate());
+        attendance.setEndTime(attendanceUpdateRequest.getEndTime());
+        attendance.setWorkingHours(attendanceUpdateRequest.getBreakTime());
+        attendance.setRemarks(attendanceUpdateRequest.getRemarks());
+        attendanceRepository.save(attendance);
     }
 }

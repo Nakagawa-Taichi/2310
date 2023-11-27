@@ -2,7 +2,7 @@ package com.example.demo.dto;
 
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
@@ -29,7 +29,7 @@ public class ExpenseRequest implements Serializable {
 	 */
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@NotNull(message = "日付を選択してください")
-	private LocalDate applicationDate;
+	private Date applicationDate;
 
 	/**
 	 * 経費項目
