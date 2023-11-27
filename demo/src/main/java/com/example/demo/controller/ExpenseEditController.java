@@ -74,7 +74,7 @@ public class ExpenseEditController {
           }
       // ユーザー情報の更新
       expenseEditService.update(expenseUpdateRequest);
-      return "expense/list";
+      return "redirect:/expense/list"; //パスの変更
     }
     
     /**
