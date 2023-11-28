@@ -57,5 +57,4 @@ public class AttendanceListEntity {
     public void setNo(Integer no) {
         this.no = no;
     }
-
 }
