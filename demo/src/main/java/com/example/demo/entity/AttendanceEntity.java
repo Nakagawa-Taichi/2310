@@ -15,15 +15,17 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "new_attendance")
+@Table(name = "new_attendance4")
 public class AttendanceEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    
+    @Column(name = "attendance_id")
+    private Integer attendance_id; 
+   
     @Column(name = "user_id")
     private Integer user_id;
-    
+
     @Column(name = "status")
     private String status;
 

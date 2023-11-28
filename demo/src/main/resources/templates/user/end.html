@@ -1,106 +1,71 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>退勤報告</title>
-    <link rel="stylesheet" href="end.css">
-    <style>
-        label {
-            display: block;
-            margin-bottom: 0.5em;
-        }
-
-        input[type="text"],
-        select,
-        textarea,
-        input[type="time"] {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 1em;
-            box-sizing: border-box;
-        }
-
-        input[type="submit"] {
-            background-color: #FF7F50;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-        }
-
-        .error-message {
-            color: red;
-        }
-    </style>
+    <link rel="stylesheet" th:href="@{/css/end.css}">
 </head>
 
 <body>
-    <center>
+    <div class="container">
+			<div th:if="${validationError}" th:each="error : ${validationError}">
+            <label class="text-danger" th:text="${error}"></label>
+        </div>
+
         <h1>退勤報告</h1>
 
-        <form id="attendanceForm">
-            <label for="userId">UserID:</label>
-            <input type="text" id="userId" name="userId" required>
+        <form th:action="@{/user/update}" th:object="${attendanceUpdateRequest}" method="post">
 
-            <label for="attendanceId">勤怠ID:</label>
-            <input type="text" id="attendanceId" name="attendanceId" required>
+		<input type="hidden" th:field="*{start_time}" class="form-control">
+		<input type="hidden" th:field="*{attendanceDate}" class="form-control">
+		<input type="hidden" th:field="*{attendanceId}" class="form-control">
 
-            <label for="status">ステータス:</label>
-            <select id="status" name="status" required>
-                <option value="">選択してください</option>
-                <option value="出勤">出勤</option>
-                <option value="遅刻">遅刻</option>
-                <option value="欠席">欠席</option>
-                <option value="代休">代休</option>
-                <option value="休日">休日</option>
-                <option value="有給">有給</option>
-                <option value="有給">その他</option>
-            </select>
+            <div class="form-group">
+                <label for="userId">UserID:</label>
+                <input type="text" th:field="*{userId}" class="form-control">
+            </div>
+
+            <div class="attendance-group">
+                <label for="status">ステータス:</label>
+                <select id="status" th:field="*{status}" class="form-control">
+                    <option value="">選択してください</option>
+                    <option value="出勤">出勤</option>
+                    <option value="退勤">退勤</option>
+                    <option value="遅刻">遅刻</option>
+                    <option value="欠席">欠席</option>
+                    <option value="代休">代休</option>
+                    <option value="休日">休日</option>
+                    <option value="有給">有給</option>
+                    <option value="その他">その他</option>
+                </select>
+            </div>
 
             <label for="attendanceDate">退勤日:</label>
-            <input type="date" id="attendanceDate" name="attendanceDate" required>
-
-            <label for="attendanceTime">退勤時間:</label>
-            <input type="time" id="attendanceTime" name="attendanceTime" required>
+            <div class="input-group">
+                <input type="date" th:field="*{leavingDate}" class="form-control">
+            </div>
 
             <label for="breakTime">休憩時間:</label>
-            <input type="time" id="breakTime" name="breakTime">
+            <div class="input-group">
+                <input type="time" th:field="*{breakTime}" class="form-control">
+            </div>    
+            
+            <label for="endTime">退勤時間:</label>
+            <div class="input-group">
+                <input type="time" th:field="*{endTime}" class="form-control">
+            </div>
 
             <label for="remarks">備考:</label>
-            <textarea id="remarks" name="remarks"></textarea>
-
-            <div class="error-message" id="errorMessage"></div>
+            <textarea id="remarks" th:field="*{remarks}" name="remarks"></textarea>
 
             <div class="button-group">
-                <input type="submit" value="登録">
-                <input type="button" value="戻る" onclick="history.back()">
+                <button type="submit" class="submitButton">登録</button>
+                <button type="button" onclick="history.back()" class="submitButton">戻る</button>
             </div>
         </form>
-
-        <script>
-            document.getElementById('attendanceForm').addEventListener('submit', function (e) {
-                e.preventDefault();
-
-                var userId = document.getElementById('userId').value;
-                var status = document.getElementById('status').value;
-                var attendanceDate = document.getElementById('attendanceDate').value;
-                var attendanceTime = document.getElementById('attendanceTime').value;
-                var breakTime = document.getElementById('breakTime').value;
-
-                // ここで追加のバリデーション
-
-                // バリデーションが成功した場合はフォームを送信
-                this.submit();
-            });
-        </script>
-
-    </center>
+       
+    </div>
 </body>
-
 </html>
