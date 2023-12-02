@@ -15,7 +15,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "勤怠テーブル", schema = "public")
+@Table(name = "attend", schema = "pubc")
 public class AttendanceListEntity {
 
     @Id
@@ -46,7 +46,10 @@ public class AttendanceListEntity {
 
     @Column(name = "休憩時間")
     private Time break_time;
-
+    
+    @Column(name = "稼働時間")
+    private String working_time;
+    
     @Column(name = "備考")
     private String remarks;
 
