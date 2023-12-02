@@ -23,6 +23,11 @@ h1 {
 
 .form-group {
     margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 1em;
 }
 
 label {
