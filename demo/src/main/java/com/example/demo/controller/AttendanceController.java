@@ -52,7 +52,7 @@ public class AttendanceController {
 	@GetMapping("/user/start")
 	public String displayAdd(Model model) {
 		model.addAttribute("attendanceRequest", new AttendanceRequest());
-		return "user/list";
+		return "user/start";
 	}
 
 	/**
