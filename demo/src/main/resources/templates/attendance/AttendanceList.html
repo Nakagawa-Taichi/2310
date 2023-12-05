@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>勤怠一覧</title>
-	<link rel="stylesheet" href="Attendance.css">
+	<link rel="stylesheet" th:href="@{/css/Attendance.css}">
 </head>
 <body>
 	<div class="container">
@@ -14,6 +14,7 @@
 		<table class="attendance-table">
 			<thead>
 				<tr>
+					<th>,</th>>
 					<th>ユーザーID</th>>
 					<th>出勤日</th>
 					<th>退勤日</th>
@@ -26,16 +27,17 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="record : ${attendanceRecords}" th:object="${expense}" class="align-middle">
-					<td th:text="${user_id}"></td>
-					<td th:text="${attendance_date}"></td>
-					<td th:text="${leavingDate}"></td>
-					<td th:text="${status}"></td>
-					<td th:text="${start_time}"></td>
-					<td th:text="${endTime}"></td>
-					<td th:text="${breakTime}">00:00</td>
-					<td th:text="${workingHours}"></td>
-					<td th:text="${remarks}"></td>
+				<tr th:each="record : ${attendanceList}" th:object="${record}" class="align-middle">
+					<td th:text="*{attendance_id}"></td>
+					<td th:text="*{user_id}"></td>
+					<td th:text="*{attendance_date}"></td>
+					<td th:text="*{leavingDate}"></td>
+					<td th:text="*{status}"></td>
+					<td th:text="*{start_time}"></td>
+					<td th:text="*{endTime}"></td>
+					<td th:text="*{breakTime}">00:00</td>
+					<td th:text="*{workingHours}"></td>
+					<td th:text="*{remarks}"></td>
 					
 				</tr>
 			</tbody>
