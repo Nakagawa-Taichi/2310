@@ -1,7 +1,5 @@
 package com.example.demo.service;
 
-import java.text.SimpleDateFormat;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -40,7 +38,7 @@ public class AttendanceEditService {
 		    attendance.setBreakTime(attendanceUpdateRequest.getBreakTime());
 		    attendance.setRemarks(attendanceUpdateRequest.getRemarks());
 		    // StringからDateへの変換処理
-		    SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd");
+//		    SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd");
 //          try {
 //				Date date = sdFormat.parse(attendanceUpdateRequest.getAttendanceDate());
 //				attendance.setAttendance_date(date);
