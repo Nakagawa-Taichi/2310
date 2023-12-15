@@ -72,7 +72,7 @@ public class AttendanceEditController {
      * @return 経費一覧画面
      */
     @RequestMapping(value = "/attend/update", method = RequestMethod.POST)
-    public String correction(@Validated @ModelAttribute AttendanceUpdateRequest attendanceUpdateRequest, BindingResult result, Model model) {
+    public String update(@Validated @ModelAttribute AttendanceUpdateRequest attendanceUpdateRequest, BindingResult result, Model model) {
         if (result.hasErrors()) {
             List<String> errorList = new ArrayList<String>();
             for (ObjectError error : result.getAllErrors()) {
