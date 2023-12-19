@@ -15,7 +15,7 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "attend")
+@Table(name = "2310")
 public class AttendanceEntity {
 
     @Id
@@ -49,4 +49,8 @@ public class AttendanceEntity {
 
     @Column(name = "remarks")
     private String remarks;
+    
+    public void setStatus(String status) {
+	    this.status = status;
+	}
 }

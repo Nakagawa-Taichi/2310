@@ -32,12 +32,12 @@ public class AttendanceEditController {
      * @return 経費情報詳細画面
      */
 	
-    @GetMapping("/attend/{id}")
-    public String displayView(@PathVariable Integer id, Model model) {
-        AttendanceEntity user = attendanceEditService.findById(id);
-        model.addAttribute("attendeData", user);
-        return "user/correction";
-    }
+//    @GetMapping("/2310/{id}")
+//    public String displayView(@PathVariable Integer id, Model model) {
+//        AttendanceEntity user = attendanceEditService.findById(id);
+//        model.addAttribute("attendeData", user);
+//        return "user/correction";
+//    }
 
     /**
      * 勤怠編集画面を表示

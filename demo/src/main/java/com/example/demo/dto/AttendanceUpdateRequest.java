@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -16,7 +15,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper=false)
 public class AttendanceUpdateRequest extends UserRequest implements Serializable {
 	
-	  @Id
+	  
 	  private Integer attendanceId;
 	  
 	  @NotNull(message = "ユーザーIDを入力してください")
