@@ -1,8 +1,6 @@
 package com.example.demo.dto;
 
 import java.io.Serializable;
-import java.time.LocalDate;
-import java.time.LocalTime;
 
 import javax.validation.constraints.NotNull;
 
@@ -14,23 +12,25 @@ import lombok.Data;
 public class AttendanceRequest implements Serializable {
 
     @NotNull(message = "ユーザーIDを入力してください")
-    private Integer userId;
-    
+    private Integer user_id;
+
     @NotNull(message = "ステータスを選択してください")
     private String status;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate attendanceDate;
+    private String attendance_date;
 
-    private LocalTime start_time;
+    private String start_time;
 
-    private LocalDate leavingDate;
+    private String leavingDate;
 
-    private LocalTime endTime;
+    private String endTime;
 
-    private LocalTime workingHours;
+    private String workingHours;
 
-    private LocalTime breakTime;
+    private String breakTime;
+
+    private String edit_reason;
 
     private String remarks;
 

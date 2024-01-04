@@ -20,7 +20,7 @@
 
 		<input type="hidden" th:field="*{start_time}" class="form-control">
 		<input type="hidden" th:field="*{attendanceDate}" class="form-control">
-		<input type="hidden" th:field="*{attendanceId}" class="form-control">
+		<input type="hidden" th:field="*{attendance_Id}" class="form-control">
 
             <div class="form-group">
                 <label for="userId">UserID:</label>
@@ -50,8 +50,8 @@
             <label for="breakTime">休憩時間:</label>
             <div class="input-group">
                 <input type="time" th:field="*{breakTime}" class="form-control">
-            </div>    
-            
+            </div>
+
             <label for="endTime">退勤時間:</label>
             <div class="input-group">
                 <input type="time" th:field="*{endTime}" class="form-control">
@@ -65,7 +65,7 @@
                 <button type="button" onclick="history.back()" class="submitButton">戻る</button>
             </div>
         </form>
-       
+
     </div>
 </body>
 </html>

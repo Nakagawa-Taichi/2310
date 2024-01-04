@@ -15,14 +15,14 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "attend")
+@Table(name = "attendance")
 public class AttendanceEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "attendance_id")
-    private Integer attendance_id; 
-   
+    private Integer attendance_id;
+
     @Column(name = "user_id")
     private Integer user_id;
 
@@ -43,9 +43,12 @@ public class AttendanceEntity {
 
     @Column(name = "working_hours")
     private LocalTime workingHours;
-    
+
     @Column(name = "break_time")
     private LocalTime breakTime;
+
+    @Column(name = "edit_reason")
+    private String edit_reason;
 
     @Column(name = "remarks")
     private String remarks;

@@ -12,18 +12,21 @@
 	<div class="container">
 		<h1>勤怠修正</h1>
 		<form th:action="@{/attend/update}" th:object="${attendanceUpdateRequest}" th:method="post">
-			<input type="hidden" th:field="*{id}" />
+			<input type="hidden" th:field="*{attendance_id}" />
 			<div class="form-group">
 				<label for="user_id">ユーザーID:</label>
 				<input type="number" id="user_id" th:field="*{user_id}">
+				<div th:if="${#fields.hasErrors('user_id')}" th:errors="*{user_id}"></div>
 			</div>
 			<div class="form-group">
 				<label for="attendance_date">出勤日</label>
 				<input type="date" th:field="*{attendance_date}" id="attendance_date">
+				<div th:if="${#fields.hasErrors('attendance_date')}" th:errors="*{attendance_date}" style="color: red;"></div>
 			</div>
 			<div class="form-group">
 				<label for="leavingDate">退勤日</label>
 				<input type="date" th:field="*{leavingDate}" id="leavingDate">
+				<div th:if="${#fields.hasErrors('leavingDate')}" th:errors="*{leavingDate}" style="color: red;"></div>
 			</div>
 			<div class="form-group">
 				<label for="status">ステータス</label>
@@ -34,30 +37,37 @@
 					<option value="early">早退</option>
 					<option value="others">その他</option>
 				</select>
+				<div th:if="${#fields.hasErrors('status')}" th:errors="*{status}" style="color: red;"></div>
 			</div>
 			<div class="form-group">
 				<label for="start_time">出勤時間</label>
 				<input type="time" th:field="*{start_time}" id="start_time">
+				<div th:if="${#fields.hasErrors('start_time')}" th:errors="*{start_time}" style="color: red;"></div>
 			</div>
 			<div class="form-group">
 				<label for="endTime">退勤時間</label>
 				<input type="time" th:field="*{endTime}" id="endTime">
+				<div th:if="${#fields.hasErrors('endTime')}" th:errors="*{endTime}" style="color: red;"></div>
 			</div>
 			<div class="form-group">
 				<label for="workingHours">稼働時間</label>
 				<input type="time" th:field="*{workingHours}" id="workingHours">
+				<div th:if="${#fields.hasErrors('workingHours')}" th:errors="*{workingHours}" style="color: red;"></div>
 			</div>
 			<div class="form-group">
 				<label for="breakTime">休憩時間</label>
 				<input type="time" th:field="*{breakTime}" id="breaktime">
+				<div th:if="${#fields.hasErrors('breakTime')}" th:errors="*{breakTime}" style="color: red;"></div>
 			</div>
 			<div class="form-group">
 				<label for="correction">修正理由</label>
-				<textarea id="correction" name="correction" rows="1" cols="30" required></textarea>
+				<textarea id="correction" th:field="*{edit_reason}" rows="1" cols="30"></textarea>
+				<div th:if="${#fields.hasErrors('edit_reason')}" th:errors="*{edit_reason}" style="color: red;"></div>
 			</div>
 			<div class="form-group">
 				<label for="remarks">備考</label>
 				<textarea id="remarks" th:field="*{remarks}" rows="1" cols="30"></textarea>
+				<div th:if="${#fields.hasErrors('remarks')}" th:errors="*{remarks}"></div>
 			</div>
 			<div class="form-group">
 				<button class="submit-button" type="submit">申請</button>
