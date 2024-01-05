@@ -50,7 +50,4 @@ public class AttendanceEntity {
     @Column(name = "remarks")
     private String remarks;
     
-    public void setStatus(String status) {
-	    this.status = status;
-	}
 }
