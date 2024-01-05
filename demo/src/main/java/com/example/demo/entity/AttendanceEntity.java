@@ -15,7 +15,7 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "2310")
+@Table(name = "attendance")
 public class AttendanceEntity {
 
     @Id
@@ -46,8 +46,10 @@ public class AttendanceEntity {
     
     @Column(name = "break_time")
     private LocalTime breakTime;
+    
+    @Column(name = "edit_reason")
+    private String edit_reason;
 
     @Column(name = "remarks")
     private String remarks;
-    
 }

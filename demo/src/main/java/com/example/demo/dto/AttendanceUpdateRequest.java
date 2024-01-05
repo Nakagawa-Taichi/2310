@@ -1,9 +1,8 @@
 package com.example.demo.dto;
 
 import java.io.Serializable;
-import java.time.LocalDate;
-import java.time.LocalTime;
 
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -13,31 +12,37 @@ import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode(callSuper=false)
-public class AttendanceUpdateRequest extends UserRequest implements Serializable {
+public class AttendanceUpdateRequest implements Serializable {
 	
-	  
-	  private Integer attendanceId;
+	  private Integer attendance_id;
 	  
 	  @NotNull(message = "ユーザーIDを入力してください")
-	  private Integer userId;
+	  private Integer user_id;
 	  
 	  @NotNull(message = "ステータスを選択してください")
 	  private String status;
 
+	  @NotEmpty(message = "出勤日を入力してください")
 	  @DateTimeFormat(pattern = "yyyy-MM-dd")
-	  private LocalDate attendanceDate;
+	  private String attendance_date;
 
-	  private LocalTime start_time;
+	  @NotEmpty(message = "出勤時間を入力してください")
+	  private String start_time;
 
-	  @DateTimeFormat(pattern = "yyyy-MM-dd")
-	  private LocalDate leavingDate;
+	  @NotEmpty(message = "退勤日を入力してください")
+	  private String leavingDate;
 
-	  private LocalTime endTime;
+	  @NotEmpty(message = "退勤時間を入力してください")
+	  private String endTime;
 
-	  private LocalTime workingHours;
+	  @NotEmpty(message = "稼働時間を入力してください")
+	  private String workingHours;
+	  
+	  @NotEmpty(message = "休憩時間を入力してください")
+	  private String breakTime;
 
-	  private LocalTime breakTime;
-
+	  @NotEmpty(message = "修正理由を入力してください")
+	  private String edit_reason;
+	  
 	  private String remarks;
-
 	}
