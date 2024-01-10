@@ -31,11 +31,11 @@
 			<div class="form-group">
 				<label for="status">ステータス</label>
 				<select id="status" th:field="*{status}">
-					<option value="work">出勤</option>
-					<option value="absent">欠勤</option>
-					<option value="delay">遅刻</option>
-					<option value="early">早退</option>
-					<option value="others">その他</option>
+					<option value="出勤">出勤</option>
+					<option value="欠勤">欠勤</option>
+					<option value="遅刻">遅刻</option>
+					<option value="早退">早退</option>
+					<option value="その他">その他</option>
 				</select>
 				<div th:if="${#fields.hasErrors('status')}" th:errors="*{status}" style="color: red;"></div>
 			</div>
